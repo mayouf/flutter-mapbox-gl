@@ -333,8 +333,7 @@ final class MapboxMapController
     if (hasLocationPermission()) {
       locationEngine = LocationEngineProvider.getBestLocationEngine(context);
       LocationComponentOptions locationComponentOptions = LocationComponentOptions.builder(context)
-        .trackingGesturesManagement(true)
-        .build();
+        .trackingGesturesManagement(true).pulseEnabled(true).build();
       locationComponent = mapboxMap.getLocationComponent();
       locationComponent.activateLocationComponent(context, style, locationComponentOptions);
       locationComponent.setLocationComponentEnabled(true);
